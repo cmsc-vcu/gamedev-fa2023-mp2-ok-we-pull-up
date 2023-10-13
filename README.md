@@ -7,7 +7,7 @@ See:
   
 
 
-![image](https://github.com/cmsc-vcu/gamedev-fa2023-mp2-ok-we-pull-up/assets/61113644/92f272df-0b19-4811-a52e-f181fec74428)
+![image](https://cdn.discordapp.com/attachments/1162398355092144168/1162411975930818640/Adobe_Scan_Oct_13_2023_1.jpg?ex=653bd783&is=65296283&hm=92ab12a476f350b3ef1c59e5defd4004f564830b96543a375bf12952429ef788&)
 
 
 ESCAPE THE DESERTED ISLAND
