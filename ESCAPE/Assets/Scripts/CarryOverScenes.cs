@@ -22,19 +22,25 @@ public class CarryOverScenes : ScriptableObject
     private bool ableToEscape = false;
     private bool trueEnding = false;
 
+    // AUDIO
+    //     where in the background audio (ocean) it is stopped at
+    //     where in the background audio (seagulls) it is stopped at
+    public float oceanTimestamp = 0.0f;
+    public float seagullTimestamp = 0.0f;
+
     private void OnEnable()
     {
         hideFlags = HideFlags.DontUnloadUnusedAsset;        
     }
 
-    private void OnDestroy()
-    {
-        
-    }
+    //private void OnDestroy()
+    //{
+    //    ... 
+    //}
     
-    public void updateCollectable(string name, bool collect){
+    public void UpdateCollectable(string scene, bool collect){
         foreach(Collectable part in allParts){
-            if(part.getName() == name){
+            if(part.getScene() == scene){
                 part.setCollected(collect);
             }
         }
@@ -46,27 +52,30 @@ public class CarryOverScenes : ScriptableObject
         ableToEscape = true;
     }
 
-    public void findSecret(){
+    public void FindSecret(){
         trueEnding = true;
     }
 
-    public bool escape()
+    public bool Escape()
     {
         return ableToEscape;
     }
 
-    public bool secretEscape()
+    public bool SecretEscape()
     {
         return trueEnding;
     }
 
-    public void resetAll()
+    public void ResetAll()
     {
         cameraOrientation = null;
         playerOrientation = null;
-        allParts = new List<Collectable>();
         ableToEscape = false;
         trueEnding = false;
+
+        foreach(Collectable part in allParts){
+            allParts.Remove(part);
+        }
     }
 }
 
